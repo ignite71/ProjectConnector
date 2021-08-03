@@ -33,7 +33,7 @@ const useStyle = makeStyles(theme => ({
 
 const Messenger = () => {
     const params = useParams()
-    const ENDPOINT = 'localhost:3000'
+    const ENDPOINT = 'https://projectconnector.herokuapp.com/'
     const classes = useStyle()
     const { state, dispatch } = useContext(UserContext)
     const [currentChat, setCurrentChat] = useState(null)
