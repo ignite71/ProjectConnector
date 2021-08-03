@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
    
     paperStyle:
     {   padding :20,
-        height:'80vh',
+        height:'600px',
         width:280, 
         margin:"20px auto"},
     
@@ -291,7 +291,7 @@ const handlePassword =(event)=>{
                 <Button type='submit' color='secondary' variant="contained"   className = {classes.btnstyle} fullWidth
                 onClick={()=>PostData()}
                 style={{margin:'20px 20px 0 0 '}}
-                >Sign in</Button>
+                >Sign Up</Button>
                 {/* <Typography >
                      <Link href="#" >
                         Forgot password ?
