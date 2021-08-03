@@ -136,7 +136,7 @@ const DetailView = ({ match }) => {
    
     const applicatonurl =`/application/${params.id}`
     const deleteBlog = async () => {    
-        await deletePost(post._id);
+        await deletePost(post?._id);
         history.push('/')
     }
 
@@ -184,7 +184,7 @@ const DetailView = ({ match }) => {
                      <Grid item xs={6}
                       
                       >
-                     <Link to={`/profile/${name._id}`} className={classes.link}>
+                     <Link to={`/profile/${name?._id}`} className={classes.link}>
                      <Typography>Author: <span style={{fontWeight: 600}}>
                         { 
                           name.name
@@ -227,7 +227,7 @@ const DetailView = ({ match }) => {
                  
                  <Grid item xs ={12}>
                      {state? (<>
-                     {(state._id === name._id)?(<>
+                     {(state?._id === name?._id)?(<>
                      <Link to = {applicatonurl} className={classes.linkappl} >
                          Applications
                      </Link>
@@ -254,7 +254,7 @@ const DetailView = ({ match }) => {
                      (<>
                      
                    {   
-                       (post.selectedMentor.length>=1||post.selectedTeamMate.length>=1)&&(state._id===post?.postedBy._id)&&
+                       (post.selectedMentor.length>=1||post.selectedTeamMate.length>=1)&&(state?._id===post?.postedBy?._id)&&
                         <AddPeople post ={post}/>
                    }
                      </>)
@@ -270,11 +270,11 @@ const DetailView = ({ match }) => {
                      post?(<>
                      {
                          post.conid?(<>
-                         {(post.selectedMentor.includes(state._id)||post.selectedTeamMate.includes(state._id) ||post.postedBy._id===state._id)  &&
+                         {(post?.selectedMentor?.includes(state?._id)||post?.selectedTeamMate?.includes(state?._id) ||post?.postedBy?._id===state?._id)  &&
                               <Link to ={`/messenger/${post?.conid[0]}`}>Chat room</Link>
                          }
                          {
-                            !( (post.selectedMentor.includes(state._id)||post.selectedTeamMate.includes(state._id) ||post.postedBy._id===state._id))&&
+                            !( (post.selectedMentor.includes(state?._id)||post.selectedTeamMate.includes(state?._id) ||post.postedBy?._id===state?._id))&&
                             <Button color='error' variant="outlined" disabled>Chat on application acceptance</Button>
 
                          }
